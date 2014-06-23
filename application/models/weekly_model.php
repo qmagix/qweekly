@@ -1,4 +1,4 @@
-class Weekly_model extends CI_Model {
+<?php class Weekly_model extends CI_Model {
 
     var $project=array('title'=>'','notes'=>'','keywords'=>'');
     var $finding=array('title'=>'','notes'=>'','comments'=>'','keywords'=>'');
@@ -45,7 +45,7 @@ class Weekly_model extends CI_Model {
 
         $this->db->insert('findings', $finding);
         //get id, insert into project_findings table
-        $this->db->insert('project_findings', array('project_id'=>$_POST['project_id'], 'finding_id'=>$this->db->insert_id());
+        $this->db->insert('project_findings', array('project_id'=>$_POST['project_id'], 'finding_id'=>$this->db->insert_id()));
         // need to support multiple projects association
         
     }
@@ -62,3 +62,4 @@ class Weekly_model extends CI_Model {
     
     
 }
+?>
